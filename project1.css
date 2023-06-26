@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif; 
+    }
+    html, body{
+        display: grid;
+        height: 100%;
+        place-items: center;
+        background-color:rgb(44, 233, 208);
+    }
+    .wrapper{
+        height: 400px;
+        width: 320px;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    .wrapper .card{
+        height: 100%;
+        width:100%;
+        position:absolute;
+        background-color:white;
+        border-radius: 10px;
+        transform: rotateY(0deg);
+        padding: 5px;
+        transform-style: preserve-3d;
+        transition: 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .wrapper:hover> .frontface{
+        transform: rotateY(-180deg);
+        
+    }
+    .wrapper .card img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+    }
+    .wrapper .backface img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        padding:5px;
+        background-color: rgb(44, 233, 208);
+
+    }
+    .wrapper .backface{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: rotateY(90deg);
+        
+    }
+    .wrapper:hover> .backface{
+        transform: rotateY(0deg);
+    }
+    .wrapper .backface .info{
+        text-align: center;
+    }
+    .wrapper .backface .info .title{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .backface ul{
+        display:flex;
+    }
+    .backface ul a{
+        display: block;
+        height:40px;
+        width:40px;
+        background-color: rgb(43, 205, 205);
+        text-align: center;
+        border: 2px solid transparent;
+        line-height:38px;
+        margin: 0 5px;
+        border-radius: 50%;
+        color: aliceblue;
+
+    }
+    .backface ul a:hover{
+        background:none;
+        color:rgb(42, 201, 201);
+        border-color:rgb(42, 201, 201);
+    }
